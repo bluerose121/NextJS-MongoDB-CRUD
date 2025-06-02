@@ -1,4 +1,6 @@
 "use client";
+import { deleteTodos } from "@/actions";
+import { updateTodos } from "@/actions"
 import { useState } from "react";
 
 export default function Todo({ text, id }) {
@@ -7,7 +9,7 @@ export default function Todo({ text, id }) {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    console.log(`Updating todo: ${id}`);
+    updateTodos(id, newText);
     setShowUpdateInput(!showUpdateInput);
   };
 
@@ -37,7 +39,7 @@ export default function Todo({ text, id }) {
           </button>
         ) : (
           <button
-            onClick={() => console.log(`Deleting todo: ${id}`)}
+            onClick={() => deleteTodos(id)}
             className="hover:border hover:rounded p-1"
           >
             DELETE
