@@ -13,10 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-slate-900 text-white min-h-screen antialiased transition-colors duration-300`}
+        className={`${inter.className} bg-slate-900 text-black min-h-screen antialiased transition-colors duration-300`}
       >
         {children}
       </body>
     </html>
   );
 }
+
